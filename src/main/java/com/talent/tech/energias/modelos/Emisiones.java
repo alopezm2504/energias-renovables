@@ -12,10 +12,8 @@ public class Emisiones {
     @Column(name = "EmisionID")
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PlantaID", nullable = false)
-    @JsonIgnore
-    private Plantas plantas;
+    @Column(name = "plantaid", nullable = false)
+    private Integer plantaID;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "FechaMedicion", nullable = false)
@@ -41,12 +39,12 @@ public class Emisiones {
         this.id = id;
     }
 
-    public Plantas getPlantas() {
-        return plantas;
+    public Integer getPlantaID() {
+        return plantaID;
     }
 
-    public void setPlantas(Plantas plantas) {
-        this.plantas = plantas;
+    public void setPlantaID(Integer plantaID) {
+        this.plantaID = plantaID;
     }
 
     public String getFechaMedicion() {

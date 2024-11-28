@@ -31,12 +31,6 @@ public class Plantas {
     @Column(name = "Estatus", nullable = false)
     private Estatus estatus;
 
-    @OneToMany(mappedBy = "plantas", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RegistrosProduccion> registrosProduccion;
-
-    @OneToMany(mappedBy = "plantas", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Emisiones> emisiones;
-
     // Getters y Setters
     public enum Estatus {
         OPERATIVA,

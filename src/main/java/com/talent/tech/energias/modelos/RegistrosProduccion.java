@@ -1,7 +1,5 @@
 package com.talent.tech.energias.modelos;
 
-
-
 import jakarta.persistence.*;
 import java.util.Date;
 
@@ -14,9 +12,8 @@ public class RegistrosProduccion {
     @Column(name = "RegistroID")
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PlantaID", nullable = false)
-    private Plantas plantas;
+    @Column(name = "plantaid", nullable = false)
+    private Integer plantaID;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "FechaProduccion", nullable = false)
@@ -28,5 +25,35 @@ public class RegistrosProduccion {
     public RegistrosProduccion() {
     }
 
-    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Integer getPlantaID() {
+        return plantaID;
+    }
+
+    public void setPlantaID(Integer plantaID) {
+        this.plantaID = plantaID;
+    }
+
+    public Date getFechaProduccion() {
+        return fechaProduccion;
+    }
+
+    public void setFechaProduccion(Date fechaProduccion) {
+        this.fechaProduccion = fechaProduccion;
+    }
+
+    public float getProduccionMW() {
+        return produccionMW;
+    }
+
+    public void setProduccionMW(float produccionMW) {
+        this.produccionMW = produccionMW;
+    }
 }
