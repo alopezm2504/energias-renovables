@@ -44,7 +44,5 @@ public class EmisionesServiciosImpl implements EmisionesServicios {
         emisionesRepositorio.deleteById(id);
     }
 
-    public Integer obtenerPromedioEmisiones(){
-        return
-    }
+
 }
