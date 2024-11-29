@@ -10,4 +10,5 @@ import java.util.List;
 public interface PlantasServicios {
     Plantas crearPlanta(Plantas plantas);
     List<ProduccionPlantaDTO> findTop3PlantasConMayorProduccionNativo();
+    List<ProduccionPlantaDTO> findPlantasConEmisionesCO2MayoresA1_5Nativo();
 }

@@ -17,4 +17,12 @@ public interface PlantasRepositorio extends JpaRepository<Plantas, Integer> {
             "ORDER BY SUM(RP.ProduccionMW) DESC  \n" +
             "LIMIT 3", nativeQuery = true)
     List<Object[]> findTop3PlantasConMayorProduccionNativo();
+
+    @Query(value = "SELECT P.nombre_Planta, sum(E.EmisionesCO2) AS CO2\n" +
+            "FROM PLANTAS P JOIN EMISIONES E\n" +
+            "ON P.PLANTAID = E.PlantaID\n" +
+            "GROUP BY P.Nombre_Planta\n" +
+            "HAVING CO2 > 1.5\n" +
+            "ORDER BY CO2 DESC;\n", nativeQuery = true)
+    List<Object[]> findPlantasConEmisionesCO2MayoresA1_5Nativo();
 }

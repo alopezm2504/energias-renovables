@@ -29,4 +29,11 @@ public class PlantasServiciosImpl implements PlantasServicios {
                 .map(obj -> new ProduccionPlantaDTO((String) obj[0], (Double) obj[1]))
                 .toList();
     }
+
+    @Override
+    public List<ProduccionPlantaDTO> findPlantasConEmisionesCO2MayoresA1_5Nativo() {
+        return plantasRepositorio.findPlantasConEmisionesCO2MayoresA1_5Nativo().stream()
+                .map(obj -> new ProduccionPlantaDTO((String) obj[0], (Double) obj[1]))
+                .toList();
+    }
 }

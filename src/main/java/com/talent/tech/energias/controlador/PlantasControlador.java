@@ -28,4 +28,9 @@ public class PlantasControlador {
     public ResponseEntity<?> top3PlantasConMayorProduccion() {
         return ResponseEntity.ok(plantasServiciosImpl.findTop3PlantasConMayorProduccionNativo());
     }
+
+    @GetMapping("/plantas-emisiones-co2-mayores-a-1_5")
+    public ResponseEntity<?> plantasConEmisionesCO2MayoresA1_5() {
+        return ResponseEntity.ok(plantasServiciosImpl.findPlantasConEmisionesCO2MayoresA1_5Nativo());
+    }
 }
