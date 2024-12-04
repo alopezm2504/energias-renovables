@@ -9,6 +9,11 @@ import java.util.List;
 @Service
 public interface PlantasServicios {
     Plantas crearPlanta(Plantas plantas);
+    List<Plantas> trerTodasLasPlantas();
+    Plantas obtenerPlantaPorId(Integer id);
+    Plantas actualizarPlanta(Plantas plantas);
+    void eliminarPlanta(Integer id);
     List<ProduccionPlantaDTO> findTop3PlantasConMayorProduccionNativo();
     List<ProduccionPlantaDTO> findPlantasConEmisionesCO2MayoresA1_5Nativo();
+   //List<Plantas>filtroPlantasPorEstatus();
 }

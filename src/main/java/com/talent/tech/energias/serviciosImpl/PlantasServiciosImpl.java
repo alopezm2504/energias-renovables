@@ -7,6 +7,7 @@ import com.talent.tech.energias.servicios.PlantasServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +21,26 @@ public class PlantasServiciosImpl implements PlantasServicios {
     @Override
     public Plantas crearPlanta(Plantas plantas) {
         return plantasRepositorio.save(plantas);
+    }
+
+    @Override
+    public List<Plantas> trerTodasLasPlantas() {
+        return plantasRepositorio.findAll();
+    }
+
+    @Override
+    public Plantas obtenerPlantaPorId(Integer id) {
+        return plantasRepositorio.findById(id).orElse(null);
+    }
+
+    @Override
+    public Plantas actualizarPlanta(Plantas plantas) {
+        return plantasRepositorio.save(plantas);
+    }
+
+    @Override
+    public void eliminarPlanta(Integer id) {
+        plantasRepositorio.deleteById(id);
     }
 
     @Override

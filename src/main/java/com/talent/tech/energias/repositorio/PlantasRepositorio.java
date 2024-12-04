@@ -25,4 +25,6 @@ public interface PlantasRepositorio extends JpaRepository<Plantas, Integer> {
             "HAVING CO2 > 1.5\n" +
             "ORDER BY CO2 DESC;\n", nativeQuery = true)
     List<Object[]> findPlantasConEmisionesCO2MayoresA1_5Nativo();
+
+
 }
